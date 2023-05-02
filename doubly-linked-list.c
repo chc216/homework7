@@ -15,14 +15,7 @@ typedef struct Head {
 	struct Node* first;
 }headNode;	//헤드를 가리킬 구조체 선언
 
-/* 함수 리스트 */
-
-/* note: initialize는 이중포인터를 매개변수로 받음 */
 int initialize(headNode** h);
-
-/* note: freeList는 싱글포인터를 매개변수로 받음
-        - initialize와 왜 다른지 이해 할것
-         - 이중포인터를 매개변수로 받아도 해제할 수 있을 것 */
 int freeList(headNode* h);
 
 int insertNode(headNode* h, int key);
@@ -58,7 +51,7 @@ int main()
 
 		switch(command) {
 		case 'z': case 'Z':
-			initialize(&headnode);
+			initialize(&headnode);	//headnode의 값을 변경하기 위해 headnode의 주소를 인수로 전달한다.
 			break;
 		case 'p': case 'P':
 			printList(headnode);
@@ -150,10 +143,10 @@ void printList(headNode* h) {
 	while(p != NULL) {	//리스트 전체를 돌며 key값을 출력한다.
 		printf("[ [%d]=%d ] ", i, p->key);
 		p = p->rlink;
-		i++;
+		i++;	//리스트 노드 갯수 카운트
 	}
 
-	printf("  items = %d\n", i);
+	printf("  items = %d\n", i);	//리스트의 노드 갯수 출력
 }
 
 
