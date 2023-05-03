@@ -135,7 +135,7 @@ void printList(headNode* h) {
 
 	printf("\n---PRINT\n");
 
-	if(h == NULL) {		//리스트가 존재하지 않을 경우
+	if(h == NULL || h->first == NULL) {		//리스트가 존재하지 않을 경우
 		printf("Nothing to print....\n");
 		return;
 	}
