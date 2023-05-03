@@ -35,6 +35,8 @@ int main()
 	int key;
 	headNode* headnode=NULL;
 
+	printf("[-----[최 현 철]	[2022078014]-----]"); //학번, 이름 출력
+
 	do{	//커맨드에 따라 호출 함수를 달리한다.
 		printf("----------------------------------------------------------------\n");
 		printf("                     Doubly Linked  List                        \n");
